@@ -22,7 +22,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+if you find that routs cannot find, please make sure the routes in `ram` load before application `config/application.rb` :
+
+    config.railties_order = [RemoteActiveModel::Engine, :main_app, :all]
 
 ## Development
 

@@ -7,12 +7,12 @@ module RemoteActiveModel
     end
 
     def carte
-      response = @client.get '/remote_models'
+      response = @client.get '/remote_active_models'
       JSON.parse response.body
     end
 
     def query(params)
-      response = @client.post '/remote_models/query', params
+      response = @client.post '/remote_active_models/query', params
       JSON.parse response.body
     end
   end
