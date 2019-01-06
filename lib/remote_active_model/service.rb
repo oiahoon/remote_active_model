@@ -6,10 +6,10 @@ module RemoteActiveModel
         Rails.application.eager_load! # dev env
         result = {}
         r_models = ActiveRecord::Base.subclasses.map(&:name)
-        r_models -= ["Delayed::Backend::ActiveRecord::Job", "ActiveRecord::SchemaMigration"]
+        r_models -= ['Delayed::Backend::ActiveRecord::Job', 'ActiveRecord::SchemaMigration']
         r_models.each do |r_model|
           result[r_model.to_sym] = {
-            :methods => r_model.constantize.methods - ActiveRecord::Base.methods,
+            methods: r_model.constantize.methods - ActiveRecord::Base.methods
           }
         end
         result

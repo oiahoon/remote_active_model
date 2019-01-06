@@ -1,5 +1,4 @@
 class RemoteActiveModelsController < ApplicationController
-
   skip_before_filter :verify_authenticity_token
 
   def index
@@ -9,5 +8,4 @@ class RemoteActiveModelsController < ApplicationController
   def query
     render json: RemoteActiveModel::Service.query(params)
   end
-
 end
