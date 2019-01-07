@@ -1,7 +1,7 @@
 module RemoteActiveModel
   class Retrieve
-    REMOTE_PATH = '/remote_active_models'
-    QUERY_PATH  = '/query'
+    REMOTE_PATH = '/remote_active_models'.freeze
+    QUERY_PATH  = '/query'.freeze
 
     def initialize(options = {})
       @options = options
@@ -20,6 +20,7 @@ module RemoteActiveModel
     end
 
     private
+
     def varify_and_assign_variables
       options = HashWithIndifferentAccess.new(@options)
       @remote_name = options[:name] || raise(NoNameError)
@@ -31,6 +32,5 @@ module RemoteActiveModel
       @remote_model_path = REMOTE_PATH
       @remote_query_path = "#{@remote_model_path}#{QUERY_PATH}"
     end
-
   end
 end
