@@ -22,6 +22,17 @@ Or install it yourself as:
 
 ## Usage
 
+```
+options = {
+      'name' => 'China Site',
+      'url' => 'http://localhost:3000'
+    }
+# get the models list
+RemoteActiveModel::Retrieve.new(options).carte
+# query the records
+RemoteActiveModel::Retrieve.new(options).query(params)
+```
+
 if you find that routs cannot find, please make sure the routes in `ram` load before application `config/application.rb` :
 
     config.railties_order = [RemoteActiveModel::Engine, :main_app, :all]

@@ -1,0 +1,14 @@
+module RemoteActiveModel
+  class RamError < StandardError
+    def message; self.class::MESSAGE; end
+  end
+
+  class NoUrlError < RamError
+    MESSAGE = 'options should includes :url!'
+  end
+
+  class NoNameError < RamError
+    MESSAGE = 'options should includes :name!'
+  end
+
+end
